@@ -104,26 +104,14 @@ namespace CRUD_CSharp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Product product)
+         public ActionResult Edit(Product product)
         {
             if (ModelState.IsValid)
             {
-                Product activeProduct = _db.Products.FirstOrDefault(p => p.ID == product.ID);
+                _db.Entry(product).State = EntityState.Modified;
+                _db.SaveChanges();
 
-                if (activeProduct != null)
-                {
-                    activeProduct.Name = product.Name;
-                    activeProduct.Description = product.Description;
-                    activeProduct.Price = product.Price;
-
-                    _db.SaveChanges();
-
-                    return RedirectToAction("Main");
-
-                }
-
-                return new HttpStatusCodeResult(404);
-
+                return RedirectToAction("Main");
             }
 
             return new HttpStatusCodeResult(400);
