@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Main";
+}
+
+@using CRUD_CSharp.Models
+@model List<Product>
+
+
+@Html.ActionLink("+ Add Product", "Add", null, new { @class = "add" })
+
+<div class="search">
+    <label>Search: </label>
+    <input type="search" name="Search" value="" />
+</div>
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col" class="d-flex justify-content-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var product in Model)
+            {
+                <tr>
+                    <td class="name-th">@Html.ActionLink(product.Name,"ShowProduct", new { Id = product.ID })</td>
+                    <td>@product.Description</td>
+                    <td>@product.Price ₼</td>
+                    <td class="d-flex justify-content-center">
+                        @Html.ActionLink("Edit", "Edit", new { Id = product.ID }, new { @class = "edit" })
+                        @Html.ActionLink("Delete", "Delete", new { Id = product.ID }, new { @class = "delete", onclick = "return confirm('Are you sure to delete this Product?');" })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+

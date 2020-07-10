@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add Product</h2>
+
+<form action="~/CRUD/Add" method="post" class="form">
+    <div class="name">
+        <label>Name:</label>
+        <input type="text" name="Name" />
+    </div>
+    <div class="description">
+        <label>Description:</label>
+        <textarea name="Description"></textarea>
+    </div>
+    <div class="price">
+        <label>Price:</label>
+        <input type="number" name="Price">
+    </div>
+    <input type="submit" class="submit" />
+</form>
+
+@Html.ActionLink("<- Back to Product List", "Main")

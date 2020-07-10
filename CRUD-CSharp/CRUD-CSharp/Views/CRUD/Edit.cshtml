@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using CRUD_CSharp.Models;
+@model Product
+
+<h2>Edit</h2>
+
+<form action="~/CRUD/Edit" method="post" class="form">
+
+    <input type="hidden" name="Id" value="@Model.ID" />
+    <div class="name">
+        <label>Name:</label>
+        <input type="text" name="Name" value="@Model.Name" />
+    </div>
+    <div class="description">
+        <label>Description:</label>
+        @Html.TextArea("Description", Model.Description)
+    </div>
+    <div class="price">
+        <label>Price:</label>
+        <input type="number" name="Price" value="@Model.Price">
+    </div>
+    <input type="submit" class="submit" />
+</form>
+
+@Html.ActionLink("<- Back to Product List", "Main")

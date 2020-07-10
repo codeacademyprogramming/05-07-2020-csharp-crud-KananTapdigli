@@ -1,0 +1,44 @@
+﻿.add{
+   padding: 5px 15px;
+   border: 1px solid;
+   text-decoration-line: none !important;  
+}
+
+.search input{
+    margin-top: 30px;
+    border: 1px solid #0094ff;
+    outline: none;
+}
+
+.table {
+    margin-top: 30px;
+}
+
+.form{
+    width:300px;
+    margin-top: 20px;
+}
+
+
+
+.name,.description{
+    margin-bottom:20px;
+}
+
+.form div{
+    display: flex;
+    align-items: center ;
+    justify-content:space-between;
+}
+
+.submit{
+    margin:20px 0;
+}
+
+.edit,.delete {
+    text-decoration-line: none !important;
+    padding: 5px;
+    border: 1px solid;
+    margin: 0 5px;
+}
+

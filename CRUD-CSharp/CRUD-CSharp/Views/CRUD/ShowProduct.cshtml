@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "ShowProduct";
+}
+
+@using CRUD_CSharp.Models
+@model Product
+
+<h2>@Model.Name</h2>
+
+<h5>Description:</h5>
+<p>@Model.Description</p>
+
+<h5>Price:</h5>
+<p>@Model.Price ₼</p>
+
+@Html.ActionLink("<- Back to Product List", "Main")
