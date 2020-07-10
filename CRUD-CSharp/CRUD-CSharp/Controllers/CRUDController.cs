@@ -2,6 +2,7 @@
 using CRUD_CSharp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Web;
